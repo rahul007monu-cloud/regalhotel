@@ -163,6 +163,7 @@ html[lang="hi"] .sec-head h2, html[lang="hi"] .split h2, html[lang="hi"] .page-h
 .crest-face { position: absolute; inset: 2px; border-radius: 26px; transform-style: preserve-3d; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; color: #f3e9e0;
   background: radial-gradient(circle at 50% 0%, rgba(184,134,11,.25), transparent 60%), linear-gradient(160deg, #5a1520, #22070c 75%); }
 .crest-face::after { content: ""; position: absolute; inset: 14px; border-radius: 18px; border: 1px solid rgba(245,210,122,.3); pointer-events: none; }
+.crest-crown svg { width: 100%; height: auto; display: block; }
 .crest-crown { width: 104px; transform: translateZ(70px); filter: drop-shadow(0 10px 18px rgba(0,0,0,.5)) drop-shadow(0 0 14px rgba(245,210,122,.45)); animation: glowc 3s ease-in-out infinite; }
 @keyframes glowc { 50% { filter: drop-shadow(0 10px 18px rgba(0,0,0,.5)) drop-shadow(0 0 26px rgba(245,210,122,.8)); } }
 .crest-name { font-size: 46px; font-weight: 700; letter-spacing: .12em; margin: 10px 0 0 .12em; transform: translateZ(50px); background: linear-gradient(180deg, #fff6d8 10%, #e2b04a 55%, #9a6b12); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 4px 6px rgba(0,0,0,.45)); }
