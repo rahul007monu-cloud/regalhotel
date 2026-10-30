@@ -1,32 +1,52 @@
-# Regal Hotel, Ajmer – Automation Proposal & Demo
+# Regal Hotel, Ajmer – Website, Automation Demo & Proposal
 
-**Live link:** https://rahul007monu-cloud.github.io/regalhotel/ (demo: `/demo/`, proposal PDF: `/proposal/Regal-Hotel-Automation-Proposal.pdf`)
+**Live link (GitHub Pages on hone ke baad):** https://rahul007monu-cloud.github.io/regalhotel/
+- Website: `/website/`
+- Automation demo: `/demo/`
+- Proposal PDF: `/proposal/Regal-Hotel-Automation-Proposal.pdf`
 
 ```
 regalhotel/
-├── index.html                                 ← landing page (demo + proposal links)
+├── index.html                                 ← landing page (teeno ke links)
+├── website/                                   ← hotel ki website (English + Hindi)
+│   ├── index.html                             ← home: hero, booking bar, rooms, restaurant, Urs, reviews, map, FAQ, contact
+│   ├── rooms.html                             ← rooms + price calculator + "Confirm on WhatsApp"
+│   ├── ajmer-guide.html                       ← Dargah ziyarat tips, Urs, ghoomne ki jagah, kaise pahunchein
+│   └── assets/
+│       ├── config.js                          ← ⚙️ phone, WhatsApp number, rates, Urs/Pushkar dates YAHAN badlein
+│       ├── site.js                            ← Hindi translation, WhatsApp links, booking calculator
+│       └── site.css
+├── demo/                                      ← automation demo (dashboard, bot, room service, housekeeping, reviews, pricing)
 ├── proposal/
 │   ├── Regal-Hotel-Automation-Proposal.pdf   ← client ko bhejne wala PDF (9 pages, A4)
-│   └── proposal.html                          ← editable source (browser mein khol kar Ctrl+P → Save as PDF)
-├── demo/
-│   ├── index.html                             ← clickable demo (double-click karke Chrome mein kholein)
-│   ├── styles.css
-│   └── app.js
-└── DEMO_SCRIPT.md                             ← meeting mein demo kaise dikhana hai (step by step)
+│   └── proposal.html                          ← editable source
+└── DEMO_SCRIPT.md                             ← meeting mein kya dikhana aur bolna hai
 ```
 
+## Website
+- **Do bhasha:** upar "हिंदी / English" button. Choice browser mein yaad rehti hai.
+- **Booking:** guest dates, room aur guests chunta hai. Rate × nights, Urs/Pushkar Mela ka peak rate, OTA se bachat aur 30% advance apne aap calculate hote hain. "Confirm on WhatsApp" dabane par saari details WhatsApp message mein bhar jaati hain.
+- **SEO:** har page ka title/description "hotel near Ajmer Dargah" jaise searches ke hisaab se, aur Google ke liye Hotel schema (JSON-LD).
+- **Mobile:** neeche WhatsApp aur Call ke floating buttons.
+
+### Live karne se pehle (sab `website/assets/config.js` mein)
+- `whatsapp`: hotel ka WhatsApp number, jaise `"919876543210"`. Khaali rehne par WhatsApp khulta hai aur contact khud chunna padta hai.
+- `phone`, `email`
+- `rooms`: asli rates. `direct` = website rate, `ota` = Booking.com/MMT par jo dikhta hai.
+- `events`: har saal Urs aur Pushkar Mela ki dates.
+
+Iske alawa:
+- **Photos:** abhi rangeen placeholder boxes hain ("Hotel photo here"). Hotel ki asli photos lagani hain.
+- **Reviews:** sample text hai. Live hone par Google ke asli reviews lagayein; nakli reviews na dikhayein.
+- **Domain:** jaise `regalhotelajmer.com`, GitHub Pages ya Netlify se joda ja sakta hai.
+
 ## Demo kaise chalayein
-- `demo/index.html` ko Chrome/Edge mein kholein. Internet, server ya install ki zaroorat nahi.
-- Sab data sample hai aur browser memory mein rehta hai. **Reset demo** button se sab fresh ho jata hai.
-- Owner ko bhejna ho to `demo` folder ko Netlify Drop (app.netlify.com/drop) ya GitHub Pages par free host kar sakte hain.
+- `demo/index.html` ya `website/index.html` ko Chrome/Edge mein kholein. Install ki zaroorat nahi.
+- Automation demo ka data sample hai. **Reset demo** se sab fresh ho jaata hai.
 
-## Proposal bhejne se pehle zaroor badlein
-`proposal.html` mein peele (yellow) highlight wale placeholders:
-- `[Your Company Name]`, `[Your Name]`, `[Phone]`, `[Email]`
-- Package prices (Section 08) aur ROI assumptions (Section 09) apne hisaab se check karein.
-
-Badlav ke baad `proposal.html` Chrome mein kholein → **Ctrl+P** → Destination: *Save as PDF* → **More settings → Background graphics ON** → Save.
+## Proposal bhejne se pehle
+`proposal.html` mein peele highlight wale placeholders: `[Your Company Name]`, `[Your Name]`, `[Phone]`, `[Email]`. Prices (Section 08) aur ROI (Section 09) check karein.
+Badlav ke baad Chrome mein kholein → **Ctrl+P** → *Save as PDF* → **Background graphics ON**.
 
 ## Facts ka source
-Hotel ki details (lagbhag 48 rooms, Dargah Sharif se ~400 m, station se ~1 km, Riviera Restaurant, 24-hr room service, free Wi-Fi/parking) public listings se li gayi hain (Booking.com, Hotels.com, Agoda). Meeting mein owner se confirm karein.
-Urs aur Pushkar Mela 2026 ki dates demo mein approximate hain (lunar calendar).
+Hotel ki details (lagbhag 48 rooms, Dargah Sharif se ~400 m, station se ~1 km, Riviera Restaurant, 24-hr room service, free Wi-Fi/parking) public listings se hain (Booking.com, Hotels.com, Agoda). Owner se confirm karein. Doori (distances) aur Urs/Pushkar Mela 2026 ki dates lagbhag hain.

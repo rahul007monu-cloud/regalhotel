@@ -45,7 +45,17 @@ Laptop par `demo/index.html` pehle se khol kar rakhein aur **Reset demo** daba d
 - Calendar mein Pushkar Mela (peela) aur Urs (grey) ke din dikhayein. Rates apne aap zyada.
 - Urs ka koi din click → **Approve & push** → "Ek click, sab websites par rate update."
 
-## 7. Proposal par aayein (3 min)
+## 7. Hotel Website (3 min)
+`website/index.html` kholein.
+**Bolein:** "Sir, abhi koi Google par 'hotel near Ajmer Dargah' search karta hai to use sirf Booking.com aur MakeMyTrip milte hain. Aapki apni website hogi to guest seedha aapse book karega."
+- Upar **हिंदी** button dabakar poori site Hindi mein dikhayein.
+- Booking bar mein Urs ki date (December) aur 4 guests daalein → **Check rates**.
+- Rooms page par price summary dikhayein: Urs rate apne aap, "booking sites par itna, aapse itna", bachat aur advance.
+- Naam aur mobile bharkar **Confirm on WhatsApp** → saari details WhatsApp message mein bhar jaati hain.
+- **Ajmer Guide** page: "Ziyarat tips aur Urs ki jaankari wale pages Google par traffic laate hain."
+- Mobile par khol kar WhatsApp/Call button dikhayein.
+
+## 8. Proposal par aayein (3 min)
 - PDF kholein, Section 08 (packages) aur 09 (ROI).
 - **Growth package recommend karein.**
 - Close: "Phase 1 teen hafte mein live, Pushkar Mela aur Urs se pehle. Kya hum is hafte kick-off rakh lein?"

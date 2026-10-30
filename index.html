@@ -6,26 +6,27 @@
 <title>Regal Hotel, Ajmer · Smart Automation</title>
 <style>
   body { margin: 0; font-family: "Segoe UI", system-ui, Roboto, sans-serif; background: linear-gradient(135deg, #7a1f2b, #2a0d12); color: #fff; min-height: 100vh; display: grid; place-items: center; }
-  .wrap { max-width: 720px; padding: 32px 20px; text-align: center; }
+  .wrap { max-width: 960px; padding: 32px 20px; text-align: center; }
   .eyebrow { letter-spacing: .2em; font-size: 12px; color: #f5d27a; }
   h1 { font-size: 40px; margin: 12px 0 8px; }
   p { opacity: .85; line-height: 1.6; }
-  .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+  .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 32px; }
   a.card { display: block; background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18); border-radius: 14px; padding: 24px; color: #fff; text-decoration: none; text-align: left; transition: background .2s; }
   a.card:hover { background: rgba(255,255,255,.16); }
   a.card b { font-size: 18px; display: block; margin-bottom: 6px; }
   a.card span { font-size: 14px; opacity: .8; }
-  @media (max-width: 600px) { .cards { grid-template-columns: 1fr; } h1 { font-size: 30px; } }
+  @media (max-width: 760px) { .cards { grid-template-columns: 1fr; } h1 { font-size: 30px; } }
 </style>
 </head>
 <body>
   <div class="wrap">
     <div class="eyebrow">REGAL HOTEL · AJMER</div>
     <h1>Smart Hotel Automation</h1>
-    <p>WhatsApp booking, channel sync, QR room service, housekeeping, reviews and an owner dashboard, built for Regal Hotel on Dargah Road.</p>
+    <p>A new website, WhatsApp booking, channel sync, QR room service, housekeeping, reviews and an owner dashboard, built for Regal Hotel on Dargah Road.</p>
     <div class="cards">
-      <a class="card" href="demo/"><b>▶ Open live demo</b><span>Clickable demo with sample data. Works on laptop and mobile.</span></a>
-      <a class="card" href="proposal/Regal-Hotel-Automation-Proposal.pdf"><b>📄 Read proposal (PDF)</b><span>Scope, plan, packages and expected return.</span></a>
+      <a class="card" href="website/"><b>🌐 Hotel website (demo)</b><span>English + Hindi website with rooms, price calculator and WhatsApp booking.</span></a>
+      <a class="card" href="demo/"><b>▶ Automation demo</b><span>Owner dashboard, WhatsApp bot, room service, housekeeping, reviews, pricing.</span></a>
+      <a class="card" href="proposal/Regal-Hotel-Automation-Proposal.pdf"><b>📄 Proposal (PDF)</b><span>Scope, plan, packages and expected return.</span></a>
     </div>
   </div>
 </body>
