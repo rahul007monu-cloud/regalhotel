@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Hotel Automation Proposal · Regal Hotel, Ajmer</title>
+<style>
+  @page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+  :root { --brand: #7a1f2b; --gold: #b8860b; --ink: #1f2430; --muted: #6b7280; --line: #e7e2d9; --soft: #faf7f2; }
+  * { box-sizing: border-box; }
+  body { font-family: "Segoe UI", "Noto Sans", Roboto, Arial, sans-serif; color: var(--ink); font-size: 10pt; line-height: 1.45; margin: 0; }
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  h1, h2, h3 { color: var(--brand); line-height: 1.25; }
+  h2 { font-size: 16pt; border-bottom: 2px solid var(--gold); padding-bottom: 6px; margin: 0 0 14px; }
+  h2 .num { color: var(--gold); margin-right: 8px; }
+  h3 { font-size: 12pt; margin: 18px 0 6px; }
+  p { margin: 0 0 10px; }
+  ul, ol { margin: 0 0 10px; padding-left: 20px; }
+  li { margin-bottom: 4px; }
+  table { width: 100%; border-collapse: collapse; margin: 8px 0 14px; font-size: 9.8pt; page-break-inside: avoid; }
+  th { background: var(--brand); color: #fff; text-align: left; padding: 6px 8px; font-weight: 600; }
+  td { padding: 5px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--soft); }
+  .muted { color: var(--muted); }
+  .small { font-size: 9pt; }
+  .box { background: var(--soft); border-left: 4px solid var(--gold); padding: 12px 14px; border-radius: 6px; margin: 10px 0 14px; page-break-inside: avoid; }
+  .box.brand { border-left-color: var(--brand); }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; }
+  .tile { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; page-break-inside: avoid; }
+  .tile h4 { margin: 0 0 6px; color: var(--brand); font-size: 11pt; }
+  .tile .ico { font-size: 18pt; }
+  .tag { display: inline-block; font-size: 8.5pt; padding: 2px 8px; border-radius: 99px; background: #f3e8d0; color: #7c5a00; margin-right: 4px; }
+  .price { font-size: 17pt; font-weight: 700; color: var(--brand); }
+  .pkg { border: 1px solid var(--line); border-radius: 10px; padding: 14px; page-break-inside: avoid; }
+  .pkg.rec { border: 2px solid var(--gold); position: relative; }
+  .pkg.rec::before { content: "RECOMMENDED"; position: absolute; top: -10px; left: 12px; background: var(--gold); color: #fff; font-size: 8pt; padding: 2px 8px; border-radius: 4px; letter-spacing: .06em; }
+  .pkg h4 { margin: 0 0 6px; font-size: 12pt; }
+  .pkg ul { padding-left: 16px; font-size: 9.5pt; }
+  .cb { display: inline-block; width: 11px; height: 11px; border: 1.5px solid var(--ink); vertical-align: -1px; margin-right: 4px; }
+  .placeholder { background: #fff3c4; padding: 0 3px; border-radius: 3px; }
+
+  /* Cover */
+  .cover { height: 255mm; display: flex; flex-direction: column; justify-content: space-between; }
+  .cover-top { background: linear-gradient(135deg, #7a1f2b, #4a121a); color: #fff; border-radius: 14px; padding: 40px 36px; }
+  .cover-top .eyebrow { letter-spacing: .2em; font-size: 9pt; color: #f5d27a; }
+  .cover-top h1 { color: #fff; font-size: 30pt; margin: 14px 0 8px; }
+  .cover-top .sub { font-size: 13pt; opacity: .9; }
+  .cover-mid { padding: 0 6px; }
+  .cover-mid .grid3 .tile { text-align: center; }
+  .cover-mid .big { font-size: 20pt; font-weight: 700; color: var(--brand); }
+  .meta-table td { border: 0; padding: 4px 0; background: none !important; }
+  .meta-table td:first-child { color: var(--muted); width: 140px; }
+
+  .timeline { border-left: 3px solid var(--gold); margin-left: 8px; padding-left: 18px; }
+  .timeline .ph { position: relative; margin-bottom: 14px; page-break-inside: avoid; }
+  .timeline .ph::before { content: ""; position: absolute; left: -26px; top: 4px; width: 13px; height: 13px; border-radius: 50%; background: var(--brand); border: 3px solid #fff; box-shadow: 0 0 0 2px var(--gold); }
+  .timeline .ph h4 { margin: 0 0 4px; color: var(--brand); }
+
+  .flow { display: flex; gap: 6px; align-items: stretch; margin: 10px 0 14px; }
+  .flow .st { flex: 1; background: var(--soft); border: 1px solid var(--line); border-radius: 8px; padding: 8px; font-size: 9pt; text-align: center; }
+  .flow .st b { display: block; color: var(--brand); margin-bottom: 3px; }
+  .flow .ar { align-self: center; color: var(--gold); font-weight: 700; }
+
+  .sign { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 30px; }
+  .sign div { border-top: 1px solid var(--ink); padding-top: 6px; font-size: 9.5pt; }
+  footer.note { font-size: 8.5pt; color: var(--muted); margin-top: 16px; border-top: 1px solid var(--line); padding-top: 8px; }
+  @media screen { body { background: #e9e6e1; } .page { background: #fff; width: 210mm; min-height: 297mm; margin: 20px auto; padding: 18mm 16mm; box-shadow: 0 4px 20px rgba(0,0,0,.1); } .cover { height: auto; min-height: 255mm; } }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER ============ -->
+<section class="page">
+  <div class="cover">
+    <div class="cover-top">
+      <div class="eyebrow">BUSINESS PROPOSAL</div>
+      <h1>Smart Hotel Automation</h1>
+      <div class="sub">for <b>Regal Hotel, Ajmer</b><br>WhatsApp booking · Channel sync · Guest experience · Owner dashboard</div>
+    </div>
+
+    <div class="cover-mid">
+      <div class="grid3">
+        <div class="tile"><div class="big">24×7</div><div class="small muted">instant replies to guests on WhatsApp</div></div>
+        <div class="tile"><div class="big">15–20%</div><div class="small muted">OTA commission saved on every booking moved to direct</div></div>
+        <div class="tile"><div class="big">10 weeks</div><div class="small muted">to full go-live, in 3 phases</div></div>
+      </div>
+    </div>
+
+    <div>
+      <table class="meta-table">
+        <tr><td>Prepared for</td><td><b>The Owner / Management, Regal Hotel</b><br>Opp. Gurudwara, Dargah Road, Ajmer, Rajasthan</td></tr>
+        <tr><td>Prepared by</td><td><span class="placeholder">[Your Company Name]</span> · <span class="placeholder">[Your Name]</span></td></tr>
+        <tr><td>Contact</td><td><span class="placeholder">[Phone]</span> · <span class="placeholder">[Email]</span></td></tr>
+        <tr><td>Date</td><td>30 October 2026</td></tr>
+        <tr><td>Reference</td><td>RGL-AUTO-2026-01 · Valid for 30 days</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 1 & 2 ============ -->
+<section class="page">
+  <h2><span class="num">01</span>Executive Summary</h2>
+  <p>Regal Hotel has a strong advantage: it is a short walk from Dargah Sharif and about 1 km from Ajmer Railway Station. Demand is steady all year and rises sharply on Thursdays and Fridays, during <b>Urs Sharif</b> and during <b>Pushkar Mela</b>.</p>
+  <p>Many guests, especially pilgrims and families, decide late and contact the hotel by phone or WhatsApp. A large share of bookings also come through Booking.com, MakeMyTrip, Goibibo and Agoda, each charging a commission on every room night.</p>
+  <p>We propose a set of automations that:</p>
+  <ul>
+    <li><b>Answer every guest enquiry instantly</b> on WhatsApp, 24 hours a day, and take bookings with UPI advance payment.</li>
+    <li><b>Move more bookings to direct</b>, saving OTA commission on each one.</li>
+    <li><b>Keep room availability and rates in sync</b> across all booking sites, preventing overbooking, with event-based pricing for Urs, Pushkar Mela and weekends.</li>
+    <li><b>Improve the guest experience</b>: online pre-check-in, QR room service from Riviera Restaurant, faster housekeeping.</li>
+    <li><b>Raise online ratings</b> by sending happy guests to Google and alerting the manager privately about unhappy ones.</li>
+    <li><b>Give the owner a daily WhatsApp report</b> and a live dashboard of rooms, revenue and staff.</li>
+  </ul>
+  <div class="box brand">
+    <b>Live demo available.</b> A working, clickable demo of these modules has been prepared with sample data. It shows exactly how the system will look and behave for Regal Hotel before any investment is made.
+  </div>
+
+  <h2 style="margin-top:22px"><span class="num">02</span>Our Understanding of Regal Hotel</h2>
+  <table>
+    <tr><th style="width:32%">Area</th><th>Details</th></tr>
+    <tr><td>Property</td><td>About 48 air-conditioned rooms, 24-hour front desk, free Wi-Fi and free on-site parking</td></tr>
+    <tr><td>Location</td><td>Dargah Road, opposite the Gurudwara · ~400 m from Dargah Sharif · ~1 km from Ajmer Railway Station</td></tr>
+    <tr><td>Food & beverage</td><td>Riviera Restaurant (breakfast, lunch, dinner) and 24-hour room service</td></tr>
+    <tr><td>Sales channels</td><td>Walk-in / phone, and online travel agencies (Booking.com, Hotels.com/Expedia, Agoda and others)</td></tr>
+    <tr><td>Main guest segments</td><td>Pilgrims visiting Dargah Sharif, families, Pushkar visitors, business and transit travellers</td></tr>
+    <tr><td>Demand peaks</td><td>Urs Sharif (Rajab), Pushkar Mela (Kartik), Thursdays (Jumeraat) and Fridays, long weekends and holidays</td></tr>
+  </table>
+  <p class="small muted">Source: public hotel listings. Room count and facilities to be confirmed with management during the kick-off meeting.</p>
+</section>
+
+<!-- ============ 3 & 4 ============ -->
+<section class="page">
+  <h2><span class="num">03</span>Challenges We Aim to Solve</h2>
+  <p class="small muted">Common for hotels of this size and location; to be confirmed with your team in week 1.</p>
+  <table>
+    <tr><th style="width:36%">Challenge</th><th>Business impact</th></tr>
+    <tr><td>Phone and WhatsApp enquiries missed at night or during rush hours</td><td>Guests book elsewhere. Lost revenue that is never measured.</td></tr>
+    <tr><td>High dependence on OTAs</td><td>15–20% commission on each OTA booking, plus less control over the guest relationship.</td></tr>
+    <tr><td>Updating rooms and rates on each OTA separately</td><td>Overbooking risk, and rates not raised in time for Urs and weekends.</td></tr>
+    <tr><td>Manual registers for check-in, ID and Form C (foreign guests)</td><td>Slow check-in queues and compliance risk.</td></tr>
+    <tr><td>Room service orders by phone, housekeeping tracked verbally</td><td>Missed orders, unbilled items, rooms not ready when the next guest arrives.</td></tr>
+    <tr><td>Online reviews not actively managed</td><td>A few negative reviews pull down the rating and the hotel's ranking on Google and OTAs.</td></tr>
+    <tr><td>No single view of daily performance</td><td>The owner has to call the desk to know occupancy, revenue and issues.</td></tr>
+  </table>
+
+  <h2 style="margin-top:18px"><span class="num">04</span>The Guest Journey After Automation</h2>
+  <div class="flow">
+    <div class="st"><b>Enquiry</b>Guest messages on WhatsApp at 11 PM. Bot replies in 2 seconds.</div><div class="ar">›</div>
+    <div class="st"><b>Booking</b>Picks dates and room, pays 30% via UPI, gets booking ID.</div><div class="ar">›</div>
+    <div class="st"><b>Before arrival</b>Reminder, ID upload, station pickup offer.</div><div class="ar">›</div>
+    <div class="st"><b>Stay</b>2-minute check-in, QR room service, quick repairs.</div><div class="ar">›</div>
+    <div class="st"><b>Check-out</b>Invoice on WhatsApp, room auto-assigned for cleaning.</div><div class="ar">›</div>
+    <div class="st"><b>After stay</b>Feedback, Google review, offers for next Urs.</div>
+  </div>
+
+  <h3>Example: one booking, before and after</h3>
+  <table>
+    <tr><th style="width:24%">Step</th><th>Today (manual)</th><th>With automation</th></tr>
+    <tr><td>Enquiry at night</td><td>Call missed or answered late</td><td>Instant WhatsApp reply with rates and photos</td></tr>
+    <tr><td>Availability</td><td>Staff checks register / OTA extranets</td><td>Live availability from one system</td></tr>
+    <tr><td>Payment</td><td>Pay at hotel; no-show risk</td><td>UPI advance; booking confirmed automatically</td></tr>
+    <tr><td>Check-in</td><td>Fill register, photocopy ID, 10+ minutes</td><td>ID already uploaded; under 2 minutes</td></tr>
+    <tr><td>After stay</td><td>No contact</td><td>Feedback, review request, repeat-visit offers</td></tr>
+  </table>
+
+</section>
+
+<section class="page">
+  <h2><span class="num">05</span>Proposed Solution: 8 Modules</h2>
+  <div class="grid">
+    <div class="tile"><h4>1. WhatsApp Booking Bot</h4>Replies instantly in English and Hindi. Shares rates, photos, location and checks live availability. Takes a UPI advance and sends the booking confirmation and invoice. Hands complex chats to reception.</div>
+    <div class="tile"><h4>2. Channel Manager Sync</h4>One place to update rooms and rates. Booking.com, MakeMyTrip, Goibibo, Agoda and the WhatsApp bot stay in sync, so a room sold on one channel closes on the others.</div>
+    <div class="tile"><h4>3. Event-based Pricing</h4>Suggested rates for every date based on Urs, Pushkar Mela, Thursday/Friday demand and occupancy. The owner approves with one tap; rates go live everywhere.</div>
+    <div class="tile"><h4>4. Pre-check-in & Form C</h4>Guests upload ID before arrival on WhatsApp. Check-in takes under 2 minutes. Form C details for foreign guests are prepared automatically.</div>
+    <div class="tile"><h4>5. QR Room Service</h4>A QR code in each room opens the Riviera menu. Orders go to a kitchen screen and are added to the room bill automatically.</div>
+    <div class="tile"><h4>6. Housekeeping & Maintenance</h4>Check-out creates a cleaning task for the least busy staff member. Repair tickets (AC, geyser, TV) go to maintenance on WhatsApp. Room status updates live.</div>
+    <div class="tile"><h4>7. Review & Feedback Automation</h4>Feedback request after check-out. 4–5★ guests are sent to Google Reviews; 1–3★ guests alert the manager privately. AI-drafted replies to public reviews.</div>
+    <div class="tile"><h4>8. Owner Dashboard & Daily Report</h4>Live room map, occupancy, revenue, booking sources and ratings. A summary is sent to the owner's WhatsApp every night.</div>
+  </div>
+</section>
+
+<!-- ============ 5 & 6 ============ -->
+<section class="page">
+  <h2><span class="num">06</span>Technology & Data Security</h2>
+  <table>
+    <tr><th style="width:30%">Component</th><th>Proposed technology</th></tr>
+    <tr><td>WhatsApp</td><td>Official WhatsApp Business Platform (Meta), using a verified business number with a green-tick application where eligible</td></tr>
+    <tr><td>Channel manager / PMS</td><td>Integrate with the hotel's existing software if any. Otherwise we recommend an established Indian provider (e.g. eZee, STAAH or Hotelogix) and connect it.</td></tr>
+    <tr><td>Payments</td><td>Razorpay / Cashfree payment links (UPI, cards, net banking). Money goes directly to the hotel's bank account.</td></tr>
+    <tr><td>Automation engine</td><td>Workflow automation (n8n) and cloud functions hosted in an Indian data centre</td></tr>
+    <tr><td>Dashboard & QR menu</td><td>Mobile-friendly web app. Works on any phone, tablet or desktop; no installation.</td></tr>
+    <tr><td>Reviews</td><td>Google Business Profile integration; AI-drafted replies that the manager approves before posting</td></tr>
+  </table>
+  <div class="box">
+    <b>Data protection.</b> Guest ID documents are stored encrypted with role-based access, and are deleted after the legally required retention period. Guests give consent before they receive WhatsApp messages. The setup follows India's Digital Personal Data Protection (DPDP) Act, 2023. The hotel owns all its data and can export it at any time.
+  </div>
+</section>
+
+<!-- ============ 7 ============ -->
+<section class="page">
+  <h2><span class="num">07</span>Implementation Plan</h2>
+  <p>We deliver in three phases so that the hotel starts benefiting in the first month, and each phase is paid for only when it's delivered.</p>
+  <div class="timeline">
+    <div class="ph"><h4>Phase 1 · Weeks 1–3 · Quick wins</h4>
+      <span class="tag">WhatsApp bot</span><span class="tag">UPI payments</span><span class="tag">Review automation</span><span class="tag">Daily owner report</span>
+      <p style="margin-top:6px">Kick-off meeting, WhatsApp Business API setup and number verification, bot content in English and Hindi, payment gateway, Google review flow, nightly report. <b>Go-live at end of week 3.</b></p></div>
+    <div class="ph"><h4>Phase 2 · Weeks 4–7 · Revenue</h4>
+      <span class="tag">Channel manager</span><span class="tag">Event pricing</span><span class="tag">Pre-check-in & Form C</span>
+      <p style="margin-top:6px">Connect OTAs through the channel manager, load rate plans and the event calendar (Urs, Pushkar Mela), digital ID upload and Form C workflow.</p></div>
+    <div class="ph"><h4>Phase 3 · Weeks 8–10 · Operations</h4>
+      <span class="tag">QR room service</span><span class="tag">Housekeeping</span><span class="tag">Owner dashboard</span>
+      <p style="margin-top:6px">Digital menu for Riviera Restaurant and kitchen screen, QR codes printed for all rooms, housekeeping and maintenance task app, live dashboard.</p></div>
+    <div class="ph"><h4>Training & handover · Week 10</h4>
+      <p>Hands-on training for front desk, kitchen and housekeeping staff (in Hindi), simple user guides, and 30 days of close support after go-live.</p></div>
+  </div>
+
+  <h3>What we need from Regal Hotel</h3>
+  <ul>
+    <li>A dedicated mobile number for WhatsApp Business (can be the existing hotel number), and business documents for Meta verification (GST certificate or similar)</li>
+    <li>Room types, rates, policies and good-quality photos</li>
+    <li>Access to OTA extranet accounts and the current software/register, if any</li>
+    <li>Riviera Restaurant menu with prices</li>
+    <li>A single point of contact (manager) and 1–2 hours a week of their time during setup</li>
+  </ul>
+</section>
+
+<!-- ============ 8 ============ -->
+<section class="page">
+  <h2><span class="num">08</span>Investment</h2>
+  <p>Choose the package that fits the hotel today. You can start with Starter and upgrade later without losing any setup work.</p>
+  <div class="grid3">
+    <div class="pkg">
+      <h4>Starter</h4>
+      <div class="price">₹35,000</div><div class="small muted">one-time setup<br>+ ₹4,000 / month</div>
+      <ul>
+        <li>WhatsApp booking bot (EN + HI)</li>
+        <li>UPI advance payments</li>
+        <li>Review & feedback automation</li>
+        <li>Daily owner WhatsApp report</li>
+      </ul>
+      <div class="small muted">Modules 1, 7, 8 (report)</div>
+    </div>
+    <div class="pkg rec">
+      <h4>Growth</h4>
+      <div class="price">₹75,000</div><div class="small muted">one-time setup<br>+ ₹7,500 / month</div>
+      <ul>
+        <li>Everything in Starter</li>
+        <li>Channel manager integration</li>
+        <li>Event-based pricing</li>
+        <li>Pre-check-in & Form C</li>
+      </ul>
+      <div class="small muted">Modules 1–4, 7, 8 (report)</div>
+    </div>
+    <div class="pkg">
+      <h4>Complete</h4>
+      <div class="price">₹1,40,000</div><div class="small muted">one-time setup<br>+ ₹12,000 / month</div>
+      <ul>
+        <li>Everything in Growth</li>
+        <li>QR room service + kitchen screen</li>
+        <li>Housekeeping & maintenance app</li>
+        <li>Full owner dashboard</li>
+      </ul>
+      <div class="small muted">All 8 modules</div>
+    </div>
+  </div>
+  <p class="small muted" style="margin-top:10px">Prices exclude GST (18%). Monthly fee covers hosting, monitoring, updates, minor content changes and support.</p>
+
+  <h3>Third-party costs (paid directly by the hotel, at actual)</h3>
+  <table>
+    <tr><th style="width:34%">Item</th><th>Notes</th></tr>
+    <tr><td>WhatsApp messaging charges</td><td>Meta charges per message for business-initiated messages (reminders, feedback, offers). Replies to guest enquiries within 24 hours are mostly free. Typically a small monthly amount for a 48-room hotel.</td></tr>
+    <tr><td>Channel manager subscription</td><td>Only if the hotel does not already have one. Paid to the provider (Growth & Complete).</td></tr>
+    <tr><td>Payment gateway fee</td><td>As per gateway's standard rates, deducted per transaction.</td></tr>
+    <tr><td>Kitchen tablet, QR stickers</td><td>One Android tablet for the kitchen and printed QR stands for rooms (Complete).</td></tr>
+  </table>
+
+  <h3>Payment terms</h3>
+  <ul>
+    <li>40% of setup fee on signing, 30% at Phase 1 go-live, 30% at final handover</li>
+    <li>Monthly fee starts from the month after Phase 1 go-live</li>
+    <li>Minimum term 12 months for the monthly service; cancel with 30 days' notice after that</li>
+  </ul>
+</section>
+
+<!-- ============ 9 & 10 ============ -->
+<section class="page">
+  <h2><span class="num">09</span>Expected Return on Investment</h2>
+  <p>An illustrative calculation using conservative assumptions. We will replace these with the hotel's real numbers after the kick-off meeting.</p>
+  <table>
+    <tr><th>Assumption</th><th style="width:28%">Value</th></tr>
+    <tr><td>Average room rate</td><td>₹2,200 / night</td></tr>
+    <tr><td>Average OTA commission</td><td>18%</td></tr>
+    <tr><td>Room nights moved from OTA to direct WhatsApp booking</td><td>100 per month (~7% of capacity)</td></tr>
+    <tr><td>Extra room nights from enquiries that are missed today</td><td>20 per month</td></tr>
+    <tr><td>Extra room-service sales from QR ordering</td><td>₹15,000 per month</td></tr>
+  </table>
+  <table>
+    <tr><th>Monthly benefit</th><th style="width:28%">Amount</th></tr>
+    <tr><td>OTA commission saved (100 × ₹2,200 × 18%)</td><td>₹39,600</td></tr>
+    <tr><td>Additional room revenue (20 × ₹2,200)</td><td>₹44,000</td></tr>
+    <tr><td>Additional F&B revenue (Complete package)</td><td>₹15,000</td></tr>
+    <tr><td><b>Total estimated monthly benefit</b></td><td><b>~₹98,600</b></td></tr>
+  </table>
+  <div class="box brand">
+    With the <b>Growth</b> package (₹75,000 + ₹7,500/month), commission savings and extra bookings alone (~₹83,600/month) would recover the setup cost in about <b>one month</b> of full operation. This excludes the gains from higher Urs pricing, better ratings, and staff time saved.
+  </div>
+  <p class="small muted">These are estimates, not guarantees. Actual results depend on season, pricing and how actively the hotel promotes its WhatsApp number.</p>
+
+  <h2 style="margin-top:20px"><span class="num">10</span>How We Measure Success</h2>
+  <table>
+    <tr><th>KPI</th><th style="width:26%">Starting point</th><th style="width:26%">Target after 6 months</th></tr>
+    <tr><td>Share of direct (non-OTA) bookings</td><td>Measured in week 1</td><td>+15 percentage points</td></tr>
+    <tr><td>Average first-reply time on WhatsApp</td><td>Measured in week 1</td><td>Under 1 minute, 24×7</td></tr>
+    <tr><td>Google rating</td><td>Current rating</td><td>+0.3 stars</td></tr>
+    <tr><td>Number of Google reviews</td><td>Current count</td><td>+150 new reviews</td></tr>
+    <tr><td>Average check-in time</td><td>Measured in week 1</td><td>Under 2 minutes</td></tr>
+    <tr><td>Overbookings</td><td>Current count</td><td>Zero</td></tr>
+  </table>
+</section>
+
+<!-- ============ 11 & 12 ============ -->
+<section class="page">
+  <h2><span class="num">11</span>Support & Service Levels</h2>
+  <table>
+    <tr><th style="width:30%">Item</th><th>Commitment</th></tr>
+    <tr><td>Support hours</td><td>9 AM – 9 PM, all days, on WhatsApp and phone. Critical issues handled 24×7 during Urs.</td></tr>
+    <tr><td>Response time</td><td>Critical (bot or bookings down): 1 hour · Normal: same day</td></tr>
+    <tr><td>Uptime</td><td>99.5% monthly target for the bot and dashboard, with monitoring and alerts</td></tr>
+    <tr><td>Updates</td><td>Seasonal content (Urs, Pushkar, festival offers) and minor menu/rate changes included</td></tr>
+    <tr><td>Reviews</td><td>Monthly performance report and a quarterly review meeting with the owner</td></tr>
+  </table>
+
+  <h2 style="margin-top:20px"><span class="num">12</span>Next Steps</h2>
+  <ol>
+    <li><b>Live demo walkthrough</b> (30 minutes) with the owner and manager, using the clickable demo.</li>
+    <li><b>Choose a package</b> and confirm any changes to scope.</li>
+    <li><b>Sign the agreement</b> and start the kick-off meeting the same week.</li>
+    <li><b>Phase 1 goes live in 3 weeks</b>, in time for the upcoming Pushkar Mela and Urs season.</li>
+  </ol>
+
+  <div class="box">
+    <b>Why start now?</b> Pushkar Mela and Urs Sharif are among the busiest weeks of the year for Ajmer hotels. Having the WhatsApp bot and event pricing live before these peaks captures the most value in the first months.
+  </div>
+
+  <h3>Acceptance</h3>
+  <p>Package selected: <span class="cb"></span> Starter &nbsp;&nbsp; <span class="cb"></span> Growth &nbsp;&nbsp; <span class="cb"></span> Complete</p>
+  <div class="sign">
+    <div>For Regal Hotel, Ajmer<br><span class="muted small">Name, signature, date & stamp</span></div>
+    <div>For <span class="placeholder">[Your Company Name]</span><br><span class="muted small">Name, signature, date</span></div>
+  </div>
+
+  <footer class="note">This proposal is confidential and intended only for Regal Hotel, Ajmer. Prices are valid for 30 days from the date above. Hotel facts are taken from public listings and are to be confirmed with management. Event dates (Urs, Pushkar Mela) follow the lunar calendar and are set each year.</footer>
+</section>
+
+</body>
+</html>

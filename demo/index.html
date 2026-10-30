@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regal Hotel Ajmer · Smart Automation Demo</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">R</div>
+      <div>
+        <div class="brand-name">Regal Hotel</div>
+        <div class="brand-sub">Ajmer · Automation Suite</div>
+      </div>
+    </div>
+    <nav id="nav">
+      <button class="nav-item active" data-view="dashboard"><span>📊</span> Owner Dashboard</button>
+      <button class="nav-item" data-view="whatsapp"><span>💬</span> WhatsApp Booking Bot</button>
+      <button class="nav-item" data-view="roomservice"><span>🍽️</span> QR Room Service</button>
+      <button class="nav-item" data-view="housekeeping"><span>🧹</span> Housekeeping</button>
+      <button class="nav-item" data-view="reviews"><span>⭐</span> Reviews & Feedback</button>
+      <button class="nav-item" data-view="pricing"><span>📈</span> Event Pricing</button>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="demo-badge">DEMO · sample data</div>
+      <button class="btn ghost small" id="resetBtn">↺ Reset demo</button>
+    </div>
+  </aside>
+
+  <main>
+    <!-- ================= DASHBOARD ================= -->
+    <section class="view active" id="view-dashboard">
+      <header class="view-head">
+        <div>
+          <h1 id="greeting">Welcome, Owner 👋</h1>
+          <p class="muted" id="todayLabel"></p>
+        </div>
+        <button class="btn primary" id="dailyReportBtn">📲 Preview daily WhatsApp report</button>
+      </header>
+
+      <div class="kpis" id="kpis"></div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head">
+            <h3>Live room status · 48 rooms</h3>
+            <div class="legend">
+              <span><i class="dot occupied"></i>Occupied</span>
+              <span><i class="dot reserved"></i>Arriving</span>
+              <span><i class="dot vacant"></i>Ready</span>
+              <span><i class="dot dirty"></i>Cleaning</span>
+              <span><i class="dot maintenance"></i>Repair</span>
+            </div>
+          </div>
+          <div class="room-grid" id="roomGrid"></div>
+          <p class="hint">Tip: click any room to check-in, check-out or raise a repair ticket.</p>
+        </div>
+
+        <div class="card">
+          <div class="card-head"><h3>Live activity</h3><span class="pill live">● LIVE</span></div>
+          <ul class="feed" id="feed"></ul>
+        </div>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h3>Booking source (this month)</h3></div>
+          <div id="sourceBars"></div>
+          <p class="hint">Every booking moved from OTA to WhatsApp/direct saves ~15–18% commission.</p>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>Last 7 days · occupancy</h3></div>
+          <div class="bars" id="occBars"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= WHATSAPP ================= -->
+    <section class="view" id="view-whatsapp">
+      <header class="view-head">
+        <div>
+          <h1>WhatsApp Booking Bot</h1>
+          <p class="muted">Guest messages the hotel number at any hour. The bot answers, checks live availability, takes the advance payment and confirms the booking. No staff needed.</p>
+        </div>
+      </header>
+      <div class="split">
+        <div class="phone">
+          <div class="phone-top wa">
+            <div class="avatar">R</div>
+            <div>
+              <div class="wa-name">Regal Hotel Ajmer <span class="verified">✔</span></div>
+              <div class="wa-sub">Business account · replies instantly</div>
+            </div>
+          </div>
+          <div class="chat" id="waChat"></div>
+          <div class="quick" id="waQuick"></div>
+          <form class="chat-input" id="waForm">
+            <input id="waInput" placeholder="Type a message… (try: rates, location, hi)" autocomplete="off" />
+            <button class="send">➤</button>
+          </form>
+        </div>
+        <div class="side-notes">
+          <div class="card">
+            <h3>What this demo shows</h3>
+            <ol class="steps">
+              <li>Greeting in English + Hindi, menu buttons</li>
+              <li>Date, nights, guests → <b>live</b> room availability</li>
+              <li>Price calculated automatically</li>
+              <li>UPI advance payment link (simulated)</li>
+              <li>Booking ID sent, room blocked on the dashboard</li>
+              <li>Automatic check-in reminder the day before</li>
+              <li>Anything it can't answer → handed to reception</li>
+            </ol>
+          </div>
+          <div class="card">
+            <h3>Bookings made through the bot</h3>
+            <ul class="mini-list" id="waBookings"><li class="muted">None yet. Make one on the phone!</li></ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ROOM SERVICE ================= -->
+    <section class="view" id="view-roomservice">
+      <header class="view-head">
+        <div>
+          <h1>QR Room Service · Riviera Restaurant</h1>
+          <p class="muted">Each room has a QR code. Guest scans, orders from the phone, the order lands on the kitchen screen and is added to the room bill automatically.</p>
+        </div>
+      </header>
+      <div class="split">
+        <div class="phone">
+          <div class="phone-top light">
+            <div>
+              <div class="wa-name dark">Riviera Restaurant</div>
+              <div class="wa-sub dark">Ordering for <select id="rsRoom"></select></div>
+            </div>
+          </div>
+          <div class="menu" id="menu"></div>
+          <div class="cart-bar" id="cartBar"></div>
+        </div>
+        <div class="side-notes wide">
+          <div class="card">
+            <div class="card-head"><h3>Kitchen display</h3><span class="muted small">Tap a card to move it forward</span></div>
+            <div class="kanban">
+              <div><h4>🆕 New</h4><div id="kNew" class="kcol"></div></div>
+              <div><h4>👨‍🍳 Preparing</h4><div id="kPrep" class="kcol"></div></div>
+              <div><h4>✅ Delivered</h4><div id="kDone" class="kcol"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= HOUSEKEEPING ================= -->
+    <section class="view" id="view-housekeeping">
+      <header class="view-head">
+        <div>
+          <h1>Housekeeping & Maintenance</h1>
+          <p class="muted">When a guest checks out, a cleaning task is created and assigned to staff automatically. When it's marked done, the room shows as "Ready" for the front desk.</p>
+        </div>
+      </header>
+      <div class="grid-2">
+        <div class="card">
+          <div class="card-head"><h3>🧹 Cleaning tasks</h3></div>
+          <div id="hkTasks"></div>
+        </div>
+        <div class="card">
+          <div class="card-head"><h3>🔧 Repair tickets</h3></div>
+          <div id="mtTasks"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-head"><h3>Staff on duty</h3></div>
+        <div class="staff" id="staff"></div>
+      </div>
+    </section>
+
+    <!-- ================= REVIEWS ================= -->
+    <section class="view" id="view-reviews">
+      <header class="view-head">
+        <div>
+          <h1>Reviews & Guest Feedback</h1>
+          <p class="muted">After check-out the guest gets a WhatsApp feedback request. Happy guests are sent to Google Reviews. Unhappy guests are routed to the manager first, so problems are fixed privately.</p>
+        </div>
+      </header>
+      <div class="split">
+        <div class="phone">
+          <div class="phone-top wa">
+            <div class="avatar">R</div>
+            <div>
+              <div class="wa-name">Regal Hotel Ajmer <span class="verified">✔</span></div>
+              <div class="wa-sub" id="fbGuestLabel">Feedback chat</div>
+            </div>
+          </div>
+          <div class="chat" id="fbChat"><div class="empty-chat">Select a checked-out guest on the right →</div></div>
+          <div class="quick" id="fbQuick"></div>
+        </div>
+        <div class="side-notes">
+          <div class="card">
+            <h3>Today's check-outs</h3>
+            <ul class="mini-list" id="checkouts"></ul>
+          </div>
+          <div class="card">
+            <h3>Reply to public reviews (AI draft)</h3>
+            <select id="reviewPick" class="full"></select>
+            <blockquote id="reviewText"></blockquote>
+            <button class="btn primary small" id="draftBtn">✨ Draft reply</button>
+            <textarea id="draftOut" class="full" rows="6" placeholder="Draft reply appears here. Manager edits & posts."></textarea>
+          </div>
+          <div class="card">
+            <h3>Rating summary</h3>
+            <div id="ratingSummary"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRICING ================= -->
+    <section class="view" id="view-pricing">
+      <header class="view-head">
+        <div>
+          <h1>Event-based Pricing</h1>
+          <p class="muted">Ajmer demand jumps during Urs and Pushkar Mela, and on Thursdays/Fridays. The system suggests rates for each date; the owner approves with one tap, and rates are pushed to all booking sites.</p>
+        </div>
+      </header>
+      <div class="card">
+        <div class="card-head">
+          <h3>Next 60 days · suggested Deluxe rate</h3>
+          <div class="legend">
+            <span><i class="dot vacant"></i>Normal</span>
+            <span><i class="dot reserved"></i>Weekend / Jumma</span>
+            <span><i class="dot dirty"></i>Pushkar Mela</span>
+            <span><i class="dot maintenance"></i>Urs Sharif</span>
+          </div>
+        </div>
+        <div class="calendar" id="calendar"></div>
+        <p class="hint">Event dates are approximate for the demo (Urs follows the Islamic calendar and moon sighting; Pushkar Mela follows Kartik Purnima). Final dates are set by the hotel each year.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <h3>Base rates (sample)</h3>
+          <div id="baseRates"></div>
+        </div>
+        <div class="card">
+          <h3>Selected date</h3>
+          <div id="dateDetail" class="muted">Click a date on the calendar.</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modal -->
+  <div class="modal-bg" id="modalBg">
+    <div class="modal" id="modal"></div>
+  </div>
+  <div class="toast" id="toast"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
