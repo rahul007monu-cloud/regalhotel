@@ -28,6 +28,13 @@ regalhotel/
 - **Booking:** guest dates, room aur guests chunta hai. Rate × nights, Urs/Pushkar Mela ka peak rate, OTA se bachat aur 30% advance apne aap calculate hote hain. "Confirm on WhatsApp" dabane par saari details WhatsApp message mein bhar jaati hain.
 - **SEO:** har page ka title/description "hotel near Ajmer Dargah" jaise searches ke hisaab se, aur Google ke liye Hotel schema (JSON-LD).
 - **Mobile:** neeche WhatsApp aur Call ke floating buttons.
+- **3D aur animation** (`assets/fx.js`, `assets/fx.css`):
+  - Home hero mein ghoomti hui 3D dargah (sone ka gumbad, 4 minar), orbit rings, sunehre particles. Mouse ke saath halki si hilti hai, scroll par tez ghoomti hai.
+  - "360° tour": 6 cards ka 3D carousel (rooms, Riviera, Dargah, Pushkar). Khud ghoomta hai; drag, swipe ya arrows se bhi chalta hai.
+  - Flip cards (hover/tap par palatte hain), 400 m / 24×7 ke counters, room cards par 3D tilt aur chamak, scroll par 3D reveal, upar sunehri scroll progress bar.
+  - Rooms aur Guide page ke hero mein halka 3D background.
+  - Purane phone/WebGL na ho to site normal design mein chalti hai. "Reduce motion" setting wale users ko animation nahi dikhti.
+  - 3D ke liye Three.js r149 (`assets/vendor/three.min.js`, MIT license) repo mein hi rakha hai, isliye internet ke bina bhi chalta hai.
 
 ### Live karne se pehle (sab `website/assets/config.js` mein)
 - `whatsapp`: hotel ka WhatsApp number, jaise `"919876543210"`. Khaali rehne par WhatsApp khulta hai aur contact khud chunna padta hai.
