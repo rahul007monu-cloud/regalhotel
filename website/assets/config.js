@@ -6,9 +6,10 @@ window.HOTEL = {
   // WhatsApp number with country code, digits only, e.g. "919876543210".
   // Leave empty for the demo: WhatsApp will open and let you pick a contact.
   whatsapp: "",
-  phone: "",            // e.g. "+91 98765 43210" (shown in header and call button)
-  email: "",            // e.g. "stay@regalhotelajmer.com"
-  address: "Opp. Gurudwara, Dargah Road, Ajmer, Rajasthan",
+  // Front desk number as listed publicly for Regal Hotel (Kayak). Confirm with the hotel.
+  phone: "+91 145 242 4058",
+  email: "",            // e.g. "stay@regalhotelajmer.com" (optional)
+  address: "Opp. Gurudwara, Dargah Road, Ganj, Ajmer 305001, Rajasthan",
   mapsQuery: "Regal Hotel Dargah Road Ajmer",
 
   // Sample rates (₹ per night). Confirm with the hotel.

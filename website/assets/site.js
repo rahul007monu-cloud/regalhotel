@@ -8,12 +8,16 @@
 
   // ---------------- Hindi translations ----------------
   const HI = {
-    "top.addr": "गुरुद्वारा के सामने, दरगाह रोड, अजमेर",
+    "top.addr": "गुरुद्वारा के सामने, दरगाह रोड, गंज, अजमेर 305001",
+    "crest.addr": "दरगाह रोड, अजमेर शरीफ़", "crest.c1": "दरगाह तक", "crest.c2": "रिसेप्शन", "crest.c3": "रेस्टोरेंट",
+    "cap.0": "आरामदायक AC कमरे", "cap.1": "अजमेर · आना सागर झील, ~3 किमी", "cap.2": "रिवेरा रेस्टोरेंट · घर जैसा खाना", "cap.3": "ज़ियारत के बाद सुकून भरा आराम",
+    "ct.time": "चेक-इन / चेक-आउट", "ct.timev": "दोपहर 12 बजे · सामान रखने की सुविधा",
+    "ft.credits": "फ़ोटो क्रेडिट", "cr.title": "फ़ोटो क्रेडिट", "cr.uns": "कमरे, रेस्टोरेंट और खाने की फ़ोटो: Unsplash (Unsplash License)।",
     "top.desk": "24 घंटे रिसेप्शन · चेक-इन दोपहर 12 बजे",
     "logo.sub": "दरगाह रोड · अजमेर",
     "nav.home": "होम", "nav.rooms": "कमरे और किराया", "nav.guide": "अजमेर गाइड", "nav.location": "लोकेशन", "nav.contact": "संपर्क", "nav.book": "अभी बुक करें",
     "hero.eyebrow": "दरगाह रोड · अजमेर शरीफ़",
-    "hero.title": "दरगाह शरीफ़ से बस कुछ कदम दूर। रीगल होटल में आरामदायक ठहराव।",
+    "hero.title": "शाही ठहराव, दरगाह शरीफ़ से बस कुछ कदम दूर।",
     "hero.lead": "साफ़ AC कमरे, रिवेरा रेस्टोरेंट का घर जैसा खाना और 24 घंटे जागती टीम, ज़ायरीन, परिवारों और यात्रियों के लिए।",
     "chip.dargah": "दरगाह से ~400 मीटर", "chip.station": "रेलवे स्टेशन से 1 किमी", "chip.food": "रिवेरा रेस्टोरेंट", "chip.parking": "फ्री पार्किंग",
     "hero.wa": "WhatsApp पर बुक करें", "hero.rooms": "कमरे और किराया देखें",
@@ -128,9 +132,20 @@
   // ---------------- i18n ----------------
   $$("[data-i18n]").forEach((el) => (el.dataset.en = el.innerHTML));
   $$("[data-i18n-ph]").forEach((el) => (el.dataset.enPh = el.placeholder));
+  const EN_EXTRA = {
+    "cap.0": "Comfortable AC rooms",
+    "cap.1": "Ajmer · Ana Sagar Lake, ~3 km away",
+    "cap.2": "Riviera Restaurant · home-style food",
+    "cap.3": "Rest well after your ziyarat",
+  };
+  const tr = (el) => {
+    const k = el.dataset.i18n;
+    el.innerHTML = lang === "hi" && HI[k] ? HI[k] : EN_EXTRA[k] || el.dataset.en;
+  };
+  window.__i18n = tr;
   function applyLang() {
     document.documentElement.lang = lang;
-    $$("[data-i18n]").forEach((el) => { el.innerHTML = lang === "hi" && HI[el.dataset.i18n] ? HI[el.dataset.i18n] : el.dataset.en; });
+    $$("[data-i18n]").forEach(tr);
     $$("[data-i18n-ph]").forEach((el) => { el.placeholder = lang === "hi" && HI[el.dataset.i18nPh] ? HI[el.dataset.i18nPh] : el.dataset.enPh; });
     $("#langBtn").textContent = lang === "hi" ? "English" : "हिंदी";
     fillContacts();

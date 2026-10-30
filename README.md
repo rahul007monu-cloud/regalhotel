@@ -28,23 +28,20 @@ regalhotel/
 - **Booking:** guest dates, room aur guests chunta hai. Rate × nights, Urs/Pushkar Mela ka peak rate, OTA se bachat aur 30% advance apne aap calculate hote hain. "Confirm on WhatsApp" dabane par saari details WhatsApp message mein bhar jaati hain.
 - **SEO:** har page ka title/description "hotel near Ajmer Dargah" jaise searches ke hisaab se, aur Google ke liye Hotel schema (JSON-LD).
 - **Mobile:** neeche WhatsApp aur Call ke floating buttons.
-- **3D aur animation** (`assets/fx.js`, `assets/fx.css`):
-  - Home hero mein ghoomti hui 3D dargah (sone ka gumbad, 4 minar), orbit rings, sunehre particles. Mouse ke saath halki si hilti hai, scroll par tez ghoomti hai.
-  - "360° tour": 6 cards ka 3D carousel (rooms, Riviera, Dargah, Pushkar). Khud ghoomta hai; drag, swipe ya arrows se bhi chalta hai.
-  - Flip cards (hover/tap par palatte hain), 400 m / 24×7 ke counters, room cards par 3D tilt aur chamak, scroll par 3D reveal, upar sunehri scroll progress bar.
-  - Rooms aur Guide page ke hero mein halka 3D background.
-  - Purane phone/WebGL na ho to site normal design mein chalti hai. "Reduce motion" setting wale users ko animation nahi dikhti.
-  - 3D ke liye Three.js r149 (`assets/vendor/three.min.js`, MIT license) repo mein hi rakha hai, isliye internet ke bina bhi chalta hai.
+- **Design:** royal maroon-gold theme, crown logo, Cinzel font.
+- **Hero:** asli photos ka slideshow (room, Ana Sagar, Riviera ka khana) jo dheere zoom hota hai, aur saath mein ghoomta hua 3D "REGAL HOTEL" crest (crown, ★★★, sunehra border) jo mouse ke saath jhukta hai.
+- **3D effects:** 360° rooms carousel (photos ke saath), flip cards, 3D tilt cards, restaurant ka 3D photo collage, scroll par reveal, scroll progress bar. "Reduce motion" setting par animation band.
+- **Photos:** rooms aur khaane ki photos Unsplash se (free license), Ajmer ki jagahon ki photos Wikimedia Commons se. Credits Ajmer Guide page ke neeche aur `assets/commons-credits.json` mein hain.
 
 ### Live karne se pehle (sab `website/assets/config.js` mein)
 - `whatsapp`: hotel ka WhatsApp number, jaise `"919876543210"`. Khaali rehne par WhatsApp khulta hai aur contact khud chunna padta hai.
-- `phone`, `email`
+- `phone`: abhi +91 145 242 4058 hai (Kayak listing se). Hotel se confirm karein. `email` optional hai.
 - `rooms`: asli rates. `direct` = website rate, `ota` = Booking.com/MMT par jo dikhta hai.
 - `events`: har saal Urs aur Pushkar Mela ki dates.
 
 Iske alawa:
-- **Photos:** abhi rangeen placeholder boxes hain ("Hotel photo here"). Hotel ki asli photos lagani hain.
-- **Reviews:** sample text hai. Live hone par Google ke asli reviews lagayein; nakli reviews na dikhayein.
+- **Photos:** rooms aur restaurant ki photos stock (Unsplash) hain, Regal Hotel ki nahi. Live karne se pehle `assets/img/` mein hotel ki asli photos usi naam se rakh dein.
+- **Reviews:** teeno reviews demo ke liye likhe gaye hain. Live karne se pehle Google/Booking.com ke asli reviews lagayein.
 - **Domain:** jaise `regalhotelajmer.com`, GitHub Pages ya Netlify se joda ja sakta hai.
 
 ## Demo kaise chalayein
